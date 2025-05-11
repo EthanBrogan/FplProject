@@ -1,1 +1,7 @@
 # FplProject
+This project uses a neural network called Multi Layer Perceptron to help FPL players choose their team.
+
+## Instructions
+1. clone repo. 
+Do this by going to the repo on github (https://github.com/EthanBrogan/FplProject)
+Go to the code section and copy the url.
