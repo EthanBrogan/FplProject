@@ -2,11 +2,11 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
+import requests
 
 # --- Load Data & Models ---
 @st.cache_data
 def load_player_data():
-    # Read precomputed CSVs
     dfs = {}
     for pos in ["GK", "DEF", "MID", "FWD"]:
         dfs[pos] = pd.read_csv(f"output/{pos}_players.csv")
@@ -15,54 +15,221 @@ def load_player_data():
 @st.cache_resource
 def load_scaler_and_model():
     scaler = joblib.load("scaler.pkl")
-    # If you saved your model: model = tf.keras.models.load_model("model.h5")
-    # Otherwise, predictions are already baked into CSVs.
     return scaler
 
 player_data = load_player_data()
 scaler = load_scaler_and_model()
 
-st.title("⚽️ FPL Predicted Points Demo")
+# --- Sidebar: Page selector ---
+st.sidebar.title("Navigation")
+page = st.sidebar.radio("Go to", ["Recommendations", "News & Stats", "Transfers & Prices"])
 
-# --- Sidebar options ---
-st.sidebar.header("Fill Recommendations")
-mode = st.sidebar.selectbox("Mode", ["Single Position", "Full Squad"])
-if mode == "Single Position":
-    position = st.sidebar.selectbox("Position", ["GK","DEF","MID","FWD"])
-    n_spots = st.sidebar.slider("Number of players to pick", 1, 5, 2)
+# --- Page: Recommendations ---
+if page == "Recommendations":
+    st.title("FPL Team Optimisation Tool")
 
-# --- Main App ---
-if mode == "Single Position":
-    st.header(f"Top {n_spots} {position} Recommendations")
-    df = player_data[position]
-    # Filter by budget if you want; otherwise take top N
-    topn = df.nlargest(n_spots, "Predicted Points")[["name","team","value","Predicted Points"]]
-    st.table(topn.style.format({"value":"£{:.1f}","Predicted Points":"{:.1f}"}))
+    mode = st.sidebar.selectbox("Mode", ["Single Position", "Full Squad"])
+    if mode == "Single Position":
+        position = st.sidebar.selectbox("Position", ["GK","DEF","MID","FWD"])
+        n_spots = st.sidebar.slider("Number of players to pick", 1, 5, 2)
 
-elif mode == "Full Squad":
-    st.header("Current Squad Selection")
-    # Allow selection of current players
-    current = {}
-    budget = st.sidebar.number_input("Remaining Budget (£m)", 0.0, 100.0, 10.0, 0.1)
-    for pos, max_sel in [("GK",2),("DEF",5),("MID",5),("FWD",3)]:
-        current[pos] = st.multiselect(f"Current {pos}s", options=player_data[pos]["name"], default=[])
-    # Compute open slots
-    open_slots = {pos: max_sel - len(current[pos]) for pos,max_sel in [("GK",2),("DEF",5),("MID",5),("FWD",3)]}
-    st.write("### Open Slots", open_slots)
+        st.header(f"Top {n_spots} {position} Recommendations")
+        df = player_data[position]
+        topn = df.nlargest(n_spots, "Predicted Points")[["name","team","value","Predicted Points"]]
+        st.table(topn.style.format({"value":"£{:.1f}","Predicted Points":"{:.1f}"}))
 
-    # Recommend fills
-    all_recs = []
-    for pos, slots in open_slots.items():
-        if slots > 0:
+    else:  # Full Squad
+        st.header("Current Squad Selection")
+
+        # Position limits
+        position_limits = {"GK": 2, "DEF": 5, "MID": 5, "FWD": 3}
+        current = {}
+
+        # 1) Select current squad
+        for pos in position_limits:
+            current[pos] = st.multiselect(
+                f"Select your current {pos}s",
+                options=player_data[pos]["name"],
+                default=[]
+            )
+
+        # 2) Validate
+        invalid = False
+        for pos, limit in position_limits.items():
+            if len(current[pos]) > limit:
+                st.error(f"❌ Too many {pos}s! Max is {limit}.")
+                invalid = True
+        if invalid:
+            st.stop()
+
+        # 3) Calculate remaining budget
+        initial_budget = 100.0
+        spent = sum(
+            player_data[p].set_index('name').loc[current[p], 'value'].sum()
+            for p in current
+        )
+        budget = initial_budget - spent
+        st.sidebar.write(f"Remaining Budget: £{budget:.1f}m")
+
+        # 4) Show open slots
+        open_slots = {
+            pos: position_limits[pos] - len(current[pos])
+            for pos in position_limits
+        }
+        st.write("### Open Slots", open_slots)
+
+        # 5) Recommend fills
+        all_recs = []  # store each position’s recommendations
+        for pos, slots in open_slots.items():
+            if slots <= 0:
+                continue
             df = player_data[pos]
-            # Filter out already selected and over-budget
             df = df[~df["name"].isin(current[pos])]
-            df = df[df["value"] <= budget]  # simple budget filter
-            picks = df.nlargest(slots, "Predicted Points")
+            df = df[df["value"] <= budget]
+            picks = df.nlargest(slots, "Predicted Points").copy()
             picks["position"] = pos
             all_recs.append(picks)
-            st.subheader(f"Fill {slots} {pos}(s)")
-            st.table(picks[["name","team","value","Predicted Points"]]
-                     .style.format({"value":"£{:.1f}","Predicted Points":"{:.1f}"}))
+
+            st.subheader(f"Suggested {pos} Fills ({slots})")
+            st.table(
+                picks[["name","team","value","Predicted Points"]]
+                .style.format({"value":"£{:.1f}", "Predicted Points":"{:.1f}"})
+            )
             budget -= picks["value"].sum()
-    st.write(f"### Final Remaining Budget: £{budget:.1f}")
+
+        st.write(f"### Final Remaining Budget: £{budget:.1f}m")
+
+        # 6) Squad Summary Table
+        st.write("## Squad Summary")
+        summary_records = []
+
+        # a) Already-selected players
+        for pos, names in current.items():
+            df_pos = player_data[pos].set_index("name")
+            for name in names:
+                row = df_pos.loc[name]
+                summary_records.append({
+                    "Name": name,
+                    "Position": pos,
+                    "Team": row["team"],
+                    "Type": "Selected",
+                    "Price (£m)": row["value"],
+                    "Predicted Points": row["Predicted Points"],
+                })
+
+        # b) Recommended fills
+        for picks in all_recs:
+            for _, row in picks.iterrows():
+                summary_records.append({
+                    "Name": row["name"],
+                    "Position": row["position"],
+                    "Team": row["team"],
+                    "Type": "Recommended",
+                    "Price (£m)": row["value"],
+                    "Predicted Points": row["Predicted Points"],
+                })
+
+        summary_df = pd.DataFrame(summary_records)
+        st.dataframe(
+            summary_df.sort_values(["Type","Position"]).reset_index(drop=True),
+            use_container_width=True
+        )
+
+# --- Page: News & Stats ---
+elif page == "News & Stats":
+    st.title(" FPL Player Stats")
+
+    st.markdown("""
+    Below is a live overview of player statistics from the official Fantasy Premier League API.
+    You can toggle top-N by total points, goals, assists, etc.
+    """)
+
+    @st.cache_data(show_spinner=False)
+    def fetch_bootstrap():
+        r = requests.get("https://fantasy.premierleague.com/api/bootstrap-static/")
+        r.raise_for_status()
+        return r.json()
+
+    data = fetch_bootstrap()
+    players = pd.DataFrame(data["elements"])
+    teams = {t["id"]: t["name"] for t in data["teams"]}
+
+    players["team_name"] = players["team"].map(teams)
+    stats = players[[
+        "first_name", "second_name", "team_name",
+        "total_points", "goals_scored", "assists",
+        "clean_sheets", "minutes", "goals_conceded"
+    ]].rename(columns={
+        "first_name": "First",
+        "second_name": "Last"
+    })
+
+    metric = st.selectbox(
+        "Select statistic to view top players by",
+        ["total_points", "goals_scored", "assists", "clean_sheets", "minutes"]
+    )
+    top_n = st.slider("Show top players", 5, 30, 10)
+
+    top_players = stats.nlargest(top_n, metric)
+    top_players["Name"] = top_players["First"] + " " + top_players["Last"]
+    st.table(
+        top_players[["Name","team_name", metric]]
+        .reset_index(drop=True)
+        .style.format({metric: "{:.0f}"})
+    )
+
+    st.markdown("*Data from the FPL public API — updates every game-week.*")
+
+# --- Page: Transfers & Prices ---
+else:
+    st.title("Net Transfers & Price Changes")
+
+    st.markdown("""
+    This page shows how many managers have transferred each player in or out, plus their current price.
+    """)
+
+    @st.cache_data(ttl=300)
+    def fetch_market_data():
+        r = requests.get("https://fantasy.premierleague.com/api/bootstrap-static/")
+        r.raise_for_status()
+        return r.json()
+
+    market = fetch_market_data()
+    teams = {t["id"]: t["name"] for t in market["teams"]}
+    elements = market["elements"]
+
+    records = []
+    for p in elements:
+        name = f"{p['first_name']} {p['second_name']}"
+        team = teams[p["team"]]
+        price = p["now_cost"] / 10
+        ins = p["transfers_in"]
+        outs = p["transfers_out"]
+        net = ins - outs
+        records.append({
+            "Player": name,
+            "Team": team,
+            "Price (£m)": price,
+            "Transfers In": ins,
+            "Transfers Out": outs,
+            "Net Transfers": net
+        })
+
+    df_market = pd.DataFrame(records)
+    df_sorted = df_market.sort_values("Net Transfers", ascending=False).reset_index(drop=True)
+
+    st.dataframe(
+        df_sorted.style.format({
+            "Price (£m)": "{:.1f}",
+            "Transfers In": "{:,}",
+            "Transfers Out": "{:,}",
+            "Net Transfers": "{:,}"
+        }),
+        use_container_width=True
+    )
+    st.markdown("*Data via FPL public API — refreshes every 5 minutes.*")
+
+
+
+
+

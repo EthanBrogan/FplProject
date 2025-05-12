@@ -15,5 +15,5 @@ Go to the code section and copy the url.
 
 ### To run app
 'streamlit run app.py'
+'python -m streamlit run app.py'
 
-test
