@@ -9,20 +9,21 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 import joblib
 from tabulate import tabulate
-import random
 
 # Reproducibility
 SEED = 42
 np.random.seed(SEED)
 tf.random.set_seed(SEED)
-random.seed(SEED)
 
 # Load data
 url = "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/2023-24/gws/merged_gw.csv"
 df = pd.read_csv(url)
 
-# Group by player to aggregate full-season stats
-grouped = df.groupby(['name', 'position', 'team', 'value'], as_index=False).agg({
+# Filter out players who didn't play any minutes
+df = df[df['minutes'] > 0]
+
+# Aggregate full-season stats by player
+grouped = df.groupby(['name', 'position', 'team', 'element'], as_index=False).agg({
     "goals_scored": "sum",
     "assists": "sum",
     "clean_sheets": "sum",
@@ -35,51 +36,41 @@ grouped = df.groupby(['name', 'position', 'team', 'value'], as_index=False).agg(
     "xP": "sum",
     "total_points": "sum",
     "starts": "sum",
-    "selected": "mean"
-})
-
-# Add additional metrics
-extra_features = df.groupby('name', as_index=False).agg({
     "ict_index": "sum",
     "bps": "sum",
     "bonus": "sum",
     "creativity": "sum",
     "influence": "sum",
     "threat": "sum",
+    "value": "mean"
 })
 
-# Merge all together
-grouped = pd.merge(grouped, extra_features, on='name', how='left')
+# Drop players with less than 300 minutes
+grouped = grouped[grouped['minutes'] >= 300]
 
-# === Features and Target ===
+# Define features and target
 features = [
     "goals_scored", "assists", "clean_sheets", "goals_conceded", "yellow_cards", "minutes",
     "expected_goals", "expected_assists", "expected_goal_involvements", "xP", "starts", 
-    "selected", "ict_index", "bps", "bonus", "creativity", "influence", "threat"
+    "ict_index", "bps", "bonus", "creativity", "influence", "threat", "value"
 ]
 target = "total_points"
 
-# Log transform skewed features
-log_features = ["minutes", "selected", "bps", "influence"]
-for feat in log_features:
-    grouped[feat] = np.log1p(grouped[feat])
-
-# Prepare data
-X = grouped[features].fillna(0)
-y = grouped[target]
+# Fill NaNs with 0
+grouped[features] = grouped[features].fillna(0)
 
 # Scale features
 scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
+X = scaler.fit_transform(grouped[features])
+y = grouped[target].values
 joblib.dump(scaler, "scaler.pkl")
 
-# Train/validation split
-X_train, X_val, y_train, y_val = train_test_split(X_scaled, y, test_size=0.2, random_state=SEED)
+# Split data
+X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=SEED)
 
-# Build the model
-input_dim = X_train.shape[1]
+# Build model
 model = Sequential([
-    Input(shape=(input_dim,)),
+    Input(shape=(X.shape[1],)),
     Dense(128, activation='relu'),
     BatchNormalization(),
     Dropout(0.3),
@@ -87,57 +78,54 @@ model = Sequential([
     Dropout(0.3),
     Dense(32, activation='relu'),
     Dropout(0.2),
-    Dense(1)  # Regression output
+    Dense(1)
 ])
+
 model.compile(optimizer='adam', loss='huber', metrics=['mae'])
 
-# Callbacks
-early_stopping = EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True, verbose=1)
-lr_scheduler = ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=5, verbose=1)
+callbacks = [
+    EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True, verbose=1),
+    ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=5, verbose=1)
+]
 
-# Train the model
+# Train model
 history = model.fit(
     X_train, y_train,
     validation_data=(X_val, y_val),
     epochs=100,
     batch_size=32,
     verbose=2,
-    callbacks=[early_stopping, lr_scheduler]
+    callbacks=callbacks
 )
 
-# Evaluate performance
+# Evaluate
 val_loss, val_mae = model.evaluate(X_val, y_val, verbose=0)
 print(f"\nValidation MAE: {val_mae:.2f}")
 
-# Make predictions
-y_pred = model.predict(X_scaled).flatten()
-y_pred = np.clip(y_pred, 0, None)
-
-# Add predictions
+# Predict and add to dataframe
+y_pred = model.predict(X).flatten()
 grouped['Predicted Points'] = y_pred
-grouped['value'] = (grouped['value'] / 10.0).round(1)
 
-# Sort and save by position
+# Format value
+grouped['value'] = (grouped['value'] / 10).round(1)
+
+# Sort output
 df_sorted = grouped[['name', 'Predicted Points', 'position', 'team', 'value', 'total_points']].sort_values(by='Predicted Points', ascending=False)
-positions = ['GK', 'DEF', 'MID', 'FWD']
-recommended_players = {}
 
-# Create output directory if not exists
+# Create output directory
 output_dir = "output"
 os.makedirs(output_dir, exist_ok=True)
 
+# Position-specific outputs
+positions = ['GK', 'DEF', 'MID', 'FWD']
 for position in positions:
     position_players = df_sorted[df_sorted['position'] == position].drop_duplicates(subset='name')
-    recommended_players[position] = position_players[['name', 'position', 'team', 'Predicted Points', 'value']]
-    
-    # Save each position's CSV to the 'output' folder, overwriting old files
     position_players.to_csv(os.path.join(output_dir, f"{position}_players.csv"), index=False)
-
     print(f"\nRecommended {position}s:")
     print(tabulate(position_players[['name', 'position', 'team', 'Predicted Points', 'value']], headers='keys', tablefmt='grid', showindex=False))
     print("\n" + "-"*50)
 
-# Final team selection
+# Final team
 top_players = {
     'GK': df_sorted[df_sorted['position'] == 'GK'].head(2),
     'DEF': df_sorted[df_sorted['position'] == 'DEF'].head(5),
@@ -149,5 +137,4 @@ final_team = pd.concat(top_players.values()).drop_duplicates(subset='name')
 print("\nFinal Recommended FPL Team:")
 print(tabulate(final_team[['name', 'position', 'team', 'Predicted Points', 'value']], headers='keys', tablefmt='grid', showindex=False))
 
-# Save final team CSV to the 'output' folder, overwriting old file
 final_team.to_csv(os.path.join(output_dir, "final_recommended_fpl_team.csv"), index=False)

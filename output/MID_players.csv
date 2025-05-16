@@ -1,377 +1,188 @@
 name,Predicted Points,position,team,value,total_points
-Rodrigo Hernandez,170.86275,MID,Man City,5.6,146
-Bruno Guimarães Rodriguez Moura,157.68233,MID,Newcastle,5.8,147
-Brennan Johnson,133.9835,MID,Spurs,5.8,122
-Dwight McNeil,133.94174,MID,Everton,5.4,124
-Conor Gallagher,132.58798,MID,Chelsea,5.4,118
-Leandro Trossard,128.83086,MID,Arsenal,6.5,116
-Declan Rice,125.28566,MID,Arsenal,5.4,114
-Morgan Gibbs-White,123.93197,MID,Nott'm Forest,5.7,117
-Abdoulaye Doucouré,118.511086,MID,Everton,5.5,115
-Justin Kluivert,106.92473,MID,Bournemouth,4.6,91
-Tomáš Souček,101.37259,MID,West Ham,4.9,106
-Lucas Tolentino Coelho de Lima,100.75905,MID,West Ham,6.0,100
-Kai Havertz,99.96707,MID,Arsenal,7.1,102
-Willian Borges da Silva,99.46481,MID,Fulham,5.3,93
-Jack Harrison,98.73154,MID,Everton,5.5,92
-Andreas Hoelgebaum Pereira,98.71237,MID,Fulham,5.3,93
-John McGinn,96.877754,MID,Aston Villa,5.5,96
-Harvey Elliott,94.725174,MID,Liverpool,4.8,92
-Martin Ødegaard,93.492905,MID,Arsenal,8.5,84
-Ryan Christie,91.9713,MID,Bournemouth,5.0,90
-Alex Iwobi,91.730255,MID,Fulham,5.3,88
-Mykhailo Mudryk,91.380585,MID,Chelsea,6.3,89
-João Palhinha Gonçalves,90.7726,MID,Fulham,5.0,91
-Simon Adingra,89.70975,MID,Brighton,5.0,97
-Pablo Sarabia,89.50568,MID,Wolves,4.7,87
-Kobbie Mainoo,88.71321,MID,Man Utd,4.4,77
-Callum Hudson-Odoi,88.34976,MID,Nott'm Forest,4.7,87
-Jordan Ayew,84.180695,MID,Crystal Palace,5.4,83
-Jacob Murphy,84.04916,MID,Newcastle,4.8,78
-Bukayo Saka,83.96916,MID,Arsenal,9.0,83
-Leon Bailey,82.941734,MID,Aston Villa,5.5,81
-James Garner,82.800835,MID,Everton,4.9,80
-Lewis Cook,81.94626,MID,Bournemouth,5.0,71
-Eberechi Eze,81.782646,MID,Crystal Palace,6.0,83
-Noni Madueke,78.52515,MID,Chelsea,5.3,74
-Anthony Elanga,78.166565,MID,Nott'm Forest,5.0,81
-Marcus Tavernier,77.70482,MID,Bournemouth,5.4,79
-Harry Wilson,75.82208,MID,Fulham,5.3,78
-Gabriel Martinelli Silva,75.3954,MID,Arsenal,7.7,73
-Alexis Mac Allister,74.53578,MID,Liverpool,5.8,70
-Bruno Borges Fernandes,74.144005,MID,Man Utd,8.2,75
-Wilson Odobert,73.198456,MID,Burnley,5.0,82
-Mario Lemina,71.301575,MID,Wolves,4.9,84
-Mathias Jensen,70.97832,MID,Brentford,5.4,72
-Ben Brereton,70.93677,MID,Sheffield Utd,5.0,62
-James McAtee,70.01598,MID,Sheffield Utd,4.4,76
-Idrissa Gueye,68.888824,MID,Everton,4.8,62
-Will Hughes,68.439095,MID,Crystal Palace,4.9,61
-Nicolás Domínguez,65.05324,MID,Nott'm Forest,5.0,67
-Youri Tielemans,64.91867,MID,Aston Villa,5.6,61
-João Victor Gomes da Silva,64.64957,MID,Wolves,4.9,69
-Marcus Rashford,63.875023,MID,Man Utd,8.4,60
-Sean Longstaff,63.800533,MID,Newcastle,4.8,65
-Dejan Kulusevski,62.943428,MID,Spurs,7.0,64
-Edson Álvarez Velázquez,62.58179,MID,West Ham,5.0,62
-Tom Cairney,61.12548,MID,Fulham,4.9,67
-Hwang Hee-chan,60.461224,MID,Wolves,5.4,56
-Pascal Groß,60.396145,MID,Brighton,6.3,58
-James Ward-Prowse,59.9593,MID,West Ham,6.0,58
-Josh Cullen,59.060112,MID,Burnley,5.0,65
-Vini de Souza Costa,59.045963,MID,Sheffield Utd,5.0,73
-Gustavo Hamer,58.748512,MID,Sheffield Utd,5.0,60
-Facundo Buonanotte,57.84962,MID,Brighton,4.7,55
-Enzo Fernández,57.831417,MID,Chelsea,4.8,60
-Dominik Szoboszlai,57.779785,MID,Liverpool,7.1,55
-Keane Lewis-Potter,57.714245,MID,Brentford,4.7,65
-Yves Bissouma,55.720528,MID,Spurs,5.0,44
-Ross Barkley,55.62002,MID,Luton,4.9,60
-Scott McTominay,54.93781,MID,Man Utd,4.8,52
-Josh Brownhill,54.9129,MID,Burnley,4.7,57
-Douglas Luiz Soares de Paulo,54.671394,MID,Aston Villa,5.5,64
-Adam Wharton,53.68514,MID,Crystal Palace,5.0,50
-Jefferson Lerma Solís,53.01501,MID,Crystal Palace,4.7,55
-Vitaly Janelt,51.96686,MID,Brentford,5.3,53
-Wataru Endo,51.554066,MID,Liverpool,5.4,42
-Andros Townsend,50.850487,MID,Luton,5.0,61
-Michael Olise,50.713085,MID,Crystal Palace,5.8,55
-Jérémy Doku,50.62962,MID,Man City,6.5,55
-Bernardo Veiga de Carvalho e Silva,50.336594,MID,Man City,6.4,48
-Phil Foden,50.191822,MID,Man City,7.6,50
-Danilo dos Santos de Oliveira,49.82498,MID,Nott'm Forest,5.3,58
-Mohammed Kudus,49.68935,MID,West Ham,6.8,50
-Moisés Caicedo Corozo,49.01456,MID,Chelsea,4.5,50
-Boubacar Kamara,48.754047,MID,Aston Villa,5.0,40
-Jacob Bruun Larsen,48.68939,MID,Burnley,4.8,49
-Lewis Miley,47.18036,MID,Newcastle,4.5,44
-Harvey Barnes,46.577778,MID,Newcastle,6.2,47
-Mohamed Salah,46.247555,MID,Liverpool,12.5,44
-Orel Mangala,46.229008,MID,Nott'm Forest,5.0,40
-Kaoru Mitoma,45.550526,MID,Brighton,6.5,54
-Luis Díaz,44.86649,MID,Liverpool,7.5,49
-Raheem Sterling,43.89727,MID,Chelsea,7.0,48
-Albert Sambi Lokonga,43.30016,MID,Luton,4.9,47
-Bryan Mbeumo,43.266163,MID,Brentford,6.7,47
-Dango Ouattara,43.129467,MID,Bournemouth,4.7,48
-Morgan Rogers,43.11092,MID,Aston Villa,5.0,35
-Tahith Chong,42.85854,MID,Luton,4.7,43
-Ryan Gravenberch,42.22106,MID,Liverpool,5.0,45
-Joelinton Cássio Apolinário de Lira,42.052567,MID,Newcastle,5.8,40
-Billy Gilmour,41.839985,MID,Brighton,4.9,39
-Jack Grealish,41.357037,MID,Man City,7.2,36
-Luca Koleosho,41.30268,MID,Burnley,5.0,40
-Curtis Jones,41.132626,MID,Liverpool,4.9,39
-Jeffrey Schlupp,41.0872,MID,Crystal Palace,4.9,38
-Moussa Diaby,41.00113,MID,Aston Villa,6.3,45
-Amadou Onana,39.926846,MID,Everton,4.7,44
-Jarrod Bowen,39.81387,MID,West Ham,7.7,43
-Luis Sinisterra,39.71152,MID,Bournemouth,5.5,43
-Jack Hinshelwood,39.613354,MID,Brighton,4.5,42
-Jean-Ricner Bellegarde,39.33789,MID,Wolves,4.9,45
-Alex Scott,38.850643,MID,Bournemouth,4.9,41
-Giovani Lo Celso,38.835148,MID,Spurs,4.8,46
-Anthony Gordon,38.517773,MID,Newcastle,6.1,37
-Frank Onyeka,38.146637,MID,Brentford,4.9,39
-Jorge Luiz Frello Filho,37.908344,MID,Arsenal,5.3,35
-Rodrigo Bentancur,37.894077,MID,Spurs,5.4,32
-Jordan Clark,37.10093,MID,Luton,4.8,44
-Mikkel Damsgaard,36.942116,MID,Brentford,4.8,43
-Carlos Henrique Casimiro,36.30561,MID,Man Utd,5.3,37
-Jóhann Berg Gudmundsson,36.264957,MID,Burnley,4.8,41
-Philip Billing,35.832703,MID,Bournemouth,5.2,32
-Ryan Yates,35.581024,MID,Nott'm Forest,4.8,42
-Son Heung-min,35.462177,MID,Spurs,9.6,37
-Diogo Teixeira da Silva,35.085224,MID,Liverpool,7.7,34
-Antony Matheus dos Santos,35.007565,MID,Man Utd,6.8,39
-Bobby De Cordova-Reid,34.892094,MID,Fulham,5.3,33
-James Maddison,34.693787,MID,Spurs,7.9,33
-Pedro Lomba Neto,34.567524,MID,Wolves,5.5,35
-Christian Nørgaard,34.338337,MID,Brentford,5.5,33
-Alejandro Garnacho,33.946117,MID,Man Utd,4.7,34
-Oscar Bobb,33.741505,MID,Man City,4.4,30
-Carlos Baleba,33.59647,MID,Brighton,4.5,34
-Pape Matar Sarr,33.254044,MID,Spurs,4.5,33
-Kevin De Bruyne,32.86249,MID,Man City,10.6,27
-Saša Lukić,32.3886,MID,Fulham,4.3,29
-Tommy Doyle,32.23786,MID,Wolves,4.4,38
-Adama Traoré,31.62591,MID,Fulham,4.9,33
-Richarlison de Andrade,30.380013,MID,Spurs,6.8,30
-Mateo Kovačić,30.15171,MID,Man City,4.6,26
-Fábio Ferreira Vieira,28.919205,MID,Arsenal,5.4,24
-Cole Palmer,27.769712,MID,Chelsea,5.8,27
-Miguel Almirón Rejala,27.707727,MID,Newcastle,6.2,31
-Adam Lallana,27.301964,MID,Brighton,4.9,29
-Sander Berge,26.681627,MID,Burnley,4.8,27
-Jacob Ramsey,26.33465,MID,Aston Villa,5.9,29
-Emile Smith Rowe,26.307724,MID,Arsenal,5.3,25
-Ibrahim Sangaré,26.183956,MID,Nott'm Forest,5.0,18
-Christian Eriksen,25.986158,MID,Man Utd,5.9,27
-Sofyan Amrabat,25.921528,MID,Man Utd,5.0,26
-Solly March,25.72238,MID,Brighton,6.5,24
-Saman Ghoddos,24.950027,MID,Brentford,4.5,26
-Cheick Doucouré,24.801115,MID,Crystal Palace,5.0,21
-Oliver Norwood,24.177866,MID,Sheffield Utd,4.8,29
-Nicolò Zaniolo,23.31198,MID,Aston Villa,5.4,24
-Ben Osborn,22.858768,MID,Sheffield Utd,4.8,34
-Thomas Partey,22.541748,MID,Arsenal,4.8,18
-Luke Berry,22.495237,MID,Luton,4.6,28
-Anssumane Fati Vieira,22.122026,MID,Brighton,6.5,21
-James Milner,21.711882,MID,Brighton,4.8,22
-André Tavares Gomes,21.603155,MID,Everton,4.4,20
-Amad Diallo,20.855478,MID,Man Utd,4.4,23
-Elliot Anderson,18.509176,MID,Newcastle,4.2,23
-Andre Brooks,18.506466,MID,Sheffield Utd,4.4,24
-Oliver Arblaster,18.208435,MID,Sheffield Utd,4.5,19
-Joe Willock,17.949541,MID,Newcastle,5.3,18
-Jakub Moder,17.916887,MID,Brighton,4.4,21
-Matheus Luiz Nunes,17.69822,MID,Man City,4.8,14
-Pierre-Emile Højbjerg,17.49401,MID,Spurs,5.2,26
-Shandon Baptiste,17.130772,MID,Brentford,4.3,18
-Kevin Schade,16.03224,MID,Brentford,5.4,15
-Mason Mount,15.165763,MID,Man Utd,6.8,18
-Sandro Tonali,15.113636,MID,Newcastle,5.5,13
-Arnaut Danjuma Groeneveld,14.06327,MID,Everton,5.5,16
-Leander Dendoncker,13.851302,MID,Aston Villa,4.9,20
-David Brooks,13.576446,MID,Bournemouth,4.9,12
-Lewis Dobbin,13.315403,MID,Everton,4.5,18
-Hannibal Mejbri,13.24161,MID,Man Utd,4.4,11
-Matt Ritchie,12.319946,MID,Newcastle,4.3,11
-Harrison Reed,12.041903,MID,Fulham,4.8,11
-Yegor Yarmoliuk,11.564841,MID,Brentford,4.3,16
-Marvelous Nakamba,11.336907,MID,Luton,4.4,17
-Maxwel Cornet,11.240816,MID,West Ham,5.2,12
-Aaron Ramsey,11.074288,MID,Burnley,5.0,18
-Bryan Gil Salvatierra,10.59477,MID,Spurs,4.9,12
-Reiss Nelson,10.139895,MID,Arsenal,4.8,9
-Manor Solomon,9.645498,MID,Spurs,5.4,10
-Matheus França de Oliveira,9.281874,MID,Crystal Palace,4.8,11
-Julio Enciso,8.994936,MID,Brighton,5.0,12
-Mahmoud Dahoud,8.481747,MID,Brighton,4.8,10
-Saïd Benrahma,8.258419,MID,West Ham,5.9,8
-Fred Onyedinma,8.139315,MID,Luton,5.0,11
-Pelly Ruddock Mpanzu,7.984476,MID,Luton,4.7,14
-Facundo Pellistri Rebollo,7.729929,MID,Man Utd,4.4,11
-Lesley Ugochukwu,7.5392494,MID,Chelsea,4.4,11
-Giovanni Reyna,6.90452,MID,Nott'm Forest,4.7,10
-Anis Slimane,6.892524,MID,Sheffield Utd,4.7,13
-Omari Forson,6.6932554,MID,Man Utd,4.4,7
-Boubacar Traoré,6.5802946,MID,Wolves,4.3,13
-George Earthy,6.1401787,MID,West Ham,4.5,8
-Mike Trésor,5.962035,MID,Burnley,5.5,10
-Oliver Skipp,5.5725336,MID,Spurs,4.6,10
-Jairo Riedewald,5.4200716,MID,Crystal Palace,4.4,7
-Tim Iroegbunam,5.4043846,MID,Aston Villa,4.4,10
-Kalvin Phillips,5.3870535,MID,West Ham,4.7,6
-Mohamed Elneny,5.3066645,MID,Arsenal,4.4,6
-Tom Davies,5.141362,MID,Sheffield Utd,5.0,7
-Naouirou Ahamada,5.09641,MID,Crystal Palace,4.3,13
-Pablo Fornals Malla,4.965191,MID,West Ham,4.6,6
-Jesurun Rak-Sakyi,4.957596,MID,Crystal Palace,4.5,8
-Carney Chukwuemeka,4.9180527,MID,Chelsea,4.2,10
-Joe Rothwell,4.513421,MID,Bournemouth,5.0,5
-Cesare Casadei,4.457638,MID,Chelsea,4.5,11
-Tawanda Chirewa,4.4325323,MID,Wolves,4.4,8
-Tyler Adams,4.322276,MID,Bournemouth,4.9,5
-David Ozoh,4.1626816,MID,Crystal Palace,4.5,8
-Cheikhou Kouyaté,4.035497,MID,Nott'm Forest,4.8,7
-Ian Maatsen,3.9896562,MID,Chelsea,5.1,5
-John Fleck,3.6961176,MID,Sheffield Utd,4.9,3
-Bobby Clark,3.510025,MID,Liverpool,4.4,5
-Jaidon Anthony,3.1772969,MID,Bournemouth,5.0,3
-Nathan Redmond,3.167333,MID,Burnley,4.9,2
-Anass Zaroury,2.8192213,MID,Burnley,4.8,2
-Manuel Benson Hedilazio,2.4910424,MID,Burnley,5.2,5
-Michael Olakigbe,2.4391487,MID,Brentford,4.5,7
-Luke Harris,2.2662032,MID,Fulham,4.5,2
-Jadon Sancho,1.9331223,MID,Man Utd,7.0,2
-Romain Faivre,1.7460952,MID,Bournemouth,5.0,4
-Benicio Baker-Boaitey,1.5021443,MID,Brighton,4.5,4
-Omari Kellyman,1.1697414,MID,Aston Villa,4.5,2
-Hamed Traorè,1.1510391,MID,Bournemouth,4.9,1
-Philippe Coutinho Correia,0.8740323,MID,Aston Villa,6.0,2
-Yegor Yarmolyuk,0.8668866,MID,Brentford,4.4,3
-Joe White,0.35405582,MID,Newcastle,4.5,3
-Roméo Lavia,0.30226266,MID,Chelsea,4.9,1
-Stefan Bajcetic,0.2563985,MID,Liverpool,4.7,1
-Myles Peart-Harris,0.25172266,MID,Brentford,4.5,3
-Jack Cork,0.24858584,MID,Burnley,4.9,1
-Ethan Nwaneri,0.24610811,MID,Arsenal,4.5,1
-Josh Dasilva,0.24426116,MID,Brentford,4.7,2
-Han-Noah Massengo,0.24300139,MID,Burnley,4.9,2
-Bertrand Traoré,0.24054885,MID,Aston Villa,5.0,2
-Ben Doak,0.23818536,MID,Liverpool,4.5,1
-James McConnell,0.22462556,MID,Liverpool,4.4,3
-Sydie Peck,0.20658574,MID,Sheffield Utd,4.5,1
-Ryan Oné,0.20338655,MID,Sheffield Utd,4.5,1
-Michale Olakigbe,0.19783022,MID,Brentford,4.5,1
-Thiago Alcántara do Nascimento,0.19656523,MID,Liverpool,4.7,1
-Andrey Nascimento dos Santos,0.18992418,MID,Nott'm Forest,4.4,1
-Jaden Philogene-Bidace,0.17903163,MID,Aston Villa,4.5,1
-Mikey Moore,0.17497823,MID,Spurs,4.5,2
-Donny van de Beek,0.1737195,MID,Man Utd,4.8,1
-Zack Nelson,0.164655,MID,Luton,4.5,2
-Daniel Gore,0.15950398,MID,Man Utd,4.5,1
-Kaide Gordon,0.15893707,MID,Liverpool,4.5,1
-Amadou Diallo,0.15647289,MID,Newcastle,4.5,1
-Tyler Onyango,0.1380065,MID,Everton,4.5,1
-Dominic Sadi,0.13755016,MID,Bournemouth,4.5,1
-Brandon Aguilera Zamora,0.13685724,MID,Nott'm Forest,4.5,1
-Enso González,0.13458678,MID,Wolves,5.0,1
-Jimi Tauriainen,0.12863703,MID,Chelsea,4.5,1
-Alex Matos,0.12849107,MID,Chelsea,4.5,1
-Lewis Warrington,0.12640284,MID,Everton,4.5,1
-Mahamadou Susoho,0.11978771,MID,Man City,4.5,0
-Micah Hamilton,0.11734611,MID,Man City,4.5,0
-Myles Lewis-Skelly,0.10596457,MID,Arsenal,4.5,0
-Jacob Wright,0.103182375,MID,Man City,4.5,0
-Mauro Bandeira,0.097233325,MID,Arsenal,4.5,0
-Treymaurice Nyoni,0.095117494,MID,Liverpool,4.5,0
-Bradley Ibrahim,0.07956153,MID,Arsenal,4.5,0
-Charles Sagoe,0.07954207,MID,Arsenal,4.5,0
-Yago de Santiago Alonso,0.07472196,MID,Spurs,4.5,0
-Travis Hernes,0.07156499,MID,Newcastle,4.5,0
-Flynn Downes,0.06880334,MID,West Ham,5.0,0
-Máximo Perrone,0.068279475,MID,Man City,4.5,0
-Sergi Canós Tenés,0.0682022,MID,Brentford,5.0,0
-Lewis O'Brien,0.06809619,MID,Nott'm Forest,5.0,0
-Ryan Trevitt,0.067891896,MID,Brentford,4.5,0
-Temple Ojinnaka,0.06779879,MID,Wolves,4.5,0
-Jamal Lowe,0.06738165,MID,Bournemouth,5.0,0
-Tommi O'Reilly,0.0673604,MID,Aston Villa,4.5,0
-Jean-Philippe Gbamin,0.06720486,MID,Everton,4.4,0
-Luke Cundle,0.06661658,MID,Wolves,4.5,0
-Jonjo Shelvey,0.06654212,MID,Nott'm Forest,4.8,0
-Granit Xhaka,0.0665068,MID,Arsenal,6.0,0
-Jeremy Sarmiento Morante,0.06645027,MID,Brighton,4.5,0
-Scott Twine,0.06643018,MID,Burnley,4.9,0
-Luke Freeman,0.06641802,MID,Luton,4.9,0
-Yasin Ayari,0.066404164,MID,Brighton,4.5,0
-Carlos Mendes Gomes,0.06635836,MID,Luton,4.5,0
-Fabio Henrique Tavares,0.06635332,MID,Liverpool,5.0,0
-Dele Alli,0.06626141,MID,Everton,4.8,0
-Allan Campbell,0.0662453,MID,Luton,4.9,0
-Remo Freuler,0.06617409,MID,Nott'm Forest,4.9,0
-Jordan Henderson,0.066134095,MID,Liverpool,5.0,0
-Emiliano Marcondes,0.06602542,MID,Bournemouth,4.4,0
-Francisco Jorge Tomás Oliveira,0.06601539,MID,Wolves,4.5,0
-Gustavo Henrique Furtado Scarpa,0.065969646,MID,Nott'm Forest,4.5,0
-Dara Costelloe,0.0659502,MID,Burnley,4.5,0
-Morgan Sanson,0.06580782,MID,Aston Villa,4.5,0
-Alex Mighten,0.065772414,MID,Nott'm Forest,4.4,0
-Joshua Duffus,0.06570554,MID,Brighton,4.5,0
-Elliot Thorpe,0.06570551,MID,Luton,4.5,0
-Ivan Neves Abreu Cavaleiro,0.06569259,MID,Fulham,5.0,0
-Christian Pulisic,0.065671355,MID,Chelsea,5.5,0
-Tyrese Hall,0.06556806,MID,Spurs,4.5,0
-Ângelo Gabriel Borges Damaceno,0.06555243,MID,Chelsea,5.0,0
-Garang Kuol,0.06554471,MID,Newcastle,4.5,0
-Samuel Bastien,0.06553723,MID,Burnley,4.9,0
-Joshua King,0.065520376,MID,Fulham,4.5,0
-Nicolas Pépé,0.06547633,MID,Arsenal,5.0,0
-Ryan Fraser,0.06547393,MID,Newcastle,4.9,0
-Siriki Dembélé,0.06529358,MID,Bournemouth,4.5,0
-Frederico Rodrigues de Paula Santos,0.065219164,MID,Man Utd,5.0,0
-Owen Hesketh,0.06518981,MID,Wolves,4.5,0
-Josh Bowler,0.06507054,MID,Nott'm Forest,4.5,0
-Braian Ojeda Rodríguez,0.06501377,MID,Nott'm Forest,4.5,0
-Isaac Hayden,0.06498788,MID,Newcastle,4.4,0
-Jeff Hendrick,0.06487253,MID,Newcastle,4.4,0
-Matthew Dibley-Dias,0.064851806,MID,Fulham,4.5,0
-Noha Lemina,0.0648499,MID,Wolves,5.0,0
-Malcolm Ebiowei,0.06480831,MID,Crystal Palace,4.4,0
-Glen Rea,0.06475729,MID,Luton,4.4,0
-Tyrese Francois,0.064703345,MID,Fulham,4.5,0
-Luca Barrington,0.06470278,MID,Brighton,4.5,0
-Owen Hampson,0.064600915,MID,Sheffield Utd,4.5,0
-Lewis Orford,0.06454623,MID,West Ham,4.5,0
-Mads Bidstrup,0.06445895,MID,Brentford,4.5,0
-Jamie McDonnell,0.06441137,MID,Nott'm Forest,4.5,0
-Kacper Kozłowski,0.06436041,MID,Brighton,4.5,0
-Kristian Sekularac,0.064355224,MID,Fulham,4.5,0
-Gonçalo Manuel Ganchinho Guedes,0.064297855,MID,Wolves,5.5,0
-Allan Saint-Maximin,0.064178854,MID,Newcastle,6.0,0
-Cameron Peupion,0.064129114,MID,Brighton,4.5,0
-Conor Coventry,0.06406617,MID,West Ham,4.5,0
-Marcus Oliveira Alencar,0.06402896,MID,Arsenal,4.5,0
-Enock Agyei,0.06402746,MID,Burnley,4.2,0
-Ben Pearson,0.06397733,MID,Bournemouth,4.5,0
-Harry Arter,0.063964754,MID,Nott'm Forest,4.5,0
-Anthony Knockaert,0.06396264,MID,Fulham,4.5,0
-Joe Hodge,0.063962504,MID,Wolves,4.5,0
-Demarai Gray,0.06396173,MID,Everton,5.3,0
-Gavin Kilkenny,0.06395821,MID,Bournemouth,4.5,0
-Mackenzie Hunt,0.06386487,MID,Everton,4.5,0
-Hakim Ziyech,0.06385997,MID,Chelsea,5.4,0
-Emiliano Buendía Stati,0.06385949,MID,Aston Villa,5.9,0
-Daniel Castelo Podence,0.06385714,MID,Wolves,5.4,0
-Darko Churlinov,0.06377816,MID,Burnley,4.5,0
-Nikola Vlašić,0.063733116,MID,West Ham,4.5,0
-Dion Pereira,0.06369275,MID,Luton,4.4,0
-Ismaila Coulibaly,0.063680276,MID,Sheffield Utd,4.5,0
-Steven Alzate,0.06361912,MID,Brighton,4.4,0
-Jenson Metcalfe,0.06359562,MID,Everton,4.5,0
-Ethan Brierley,0.06349403,MID,Brentford,4.5,0
-Louie Watson,0.06349021,MID,Luton,4.4,0
-Jadan Raymond,0.06336582,MID,Crystal Palace,4.5,0
-Diego Manuel Jadon da Silva Moreira,0.06334253,MID,Chelsea,4.5,0
-Ty Barnett,0.06333491,MID,Wolves,4.5,0
-Riyad Mahrez,0.06333326,MID,Man City,7.5,0
-Bruno Cavaco Jordão,0.06333007,MID,Wolves,4.4,0
-Roshaun Mathurin,0.06326833,MID,Crystal Palace,4.4,0
-Tanguy Ndombélé Alvaro,0.062904745,MID,Spurs,4.4,0
-Matthew Whittingham,0.062835485,MID,Wolves,4.5,0
-Harvey Griffiths,0.062782794,MID,Wolves,4.5,0
-Ollie Harrison,0.062479228,MID,Chelsea,4.5,0
-Leo Castledine,0.062429413,MID,Chelsea,4.5,0
-Shea Charles,0.06175083,MID,Man City,4.5,0
-Kaden Rodney,0.061307758,MID,Crystal Palace,4.5,0
-Michael Dacosta Gonzalez,0.06073451,MID,Bournemouth,4.5,0
-Samy Chouchane,0.060634673,MID,Brighton,4.5,0
-Toby Collyer,0.060615927,MID,Man Utd,4.5,0
-Kiano Dyer,0.06052193,MID,Chelsea,4.5,0
-Jayden Luker,0.058257222,MID,Luton,4.5,0
-Dominic Dos Santos Martins,0.058240965,MID,Luton,4.5,0
-Axel Piesold,0.05363512,MID,Luton,4.5,0
-Kadan Young,0.04295917,MID,Aston Villa,4.5,0
-Yunus Konak,0.042337105,MID,Brentford,4.5,0
+Cole Palmer,245.55846,MID,Chelsea,5.6,243
+Bukayo Saka,233.00667,MID,Arsenal,8.9,226
+Phil Foden,225.10733,MID,Man City,7.8,230
+Mohamed Salah,212.4717,MID,Liverpool,13.0,211
+Son Heung-min,203.79002,MID,Spurs,9.6,213
+Martin Ødegaard,177.44295,MID,Arsenal,8.5,186
+Anthony Gordon,174.81395,MID,Newcastle,5.9,183
+Bruno Borges Fernandes,174.08424,MID,Man Utd,8.3,166
+Kai Havertz,174.07571,MID,Arsenal,7.2,180
+Jarrod Bowen,164.31125,MID,West Ham,7.6,182
+Rodrigo Hernandez,156.47533,MID,Man City,5.6,159
+Declan Rice,148.92947,MID,Arsenal,5.4,165
+Pascal Groß,146.2025,MID,Brighton,6.4,153
+Bernardo Veiga de Carvalho e Silva,144.16287,MID,Man City,6.3,141
+Luis Díaz,143.54207,MID,Liverpool,7.5,142
+Douglas Luiz Soares de Paulo,141.9541,MID,Aston Villa,5.5,148
+Leon Bailey,141.47594,MID,Aston Villa,5.6,148
+Morgan Gibbs-White,137.227,MID,Nott'm Forest,5.8,142
+Bruno Guimarães Rodriguez Moura,135.63507,MID,Newcastle,5.8,153
+James Ward-Prowse,124.35051,MID,West Ham,6.0,146
+Dejan Kulusevski,122.6292,MID,Spurs,6.9,130
+Leandro Trossard,122.16577,MID,Arsenal,6.5,138
+Brennan Johnson,119.4587,MID,Spurs,5.8,125
+Raheem Sterling,117.73576,MID,Chelsea,7.0,123
+Alejandro Garnacho,117.242096,MID,Man Utd,4.9,131
+James Maddison,117.18713,MID,Spurs,7.9,117
+Eberechi Eze,116.22768,MID,Crystal Palace,6.1,136
+Bryan Mbeumo,116.01397,MID,Brentford,6.8,127
+Moussa Diaby,114.46041,MID,Aston Villa,6.5,142
+Hwang Hee-chan,113.70001,MID,Wolves,5.5,125
+Mohammed Kudus,112.36803,MID,West Ham,6.7,137
+Conor Gallagher,112.08057,MID,Chelsea,5.4,129
+John McGinn,109.55086,MID,Aston Villa,5.5,119
+Jérémy Doku,106.33682,MID,Man City,6.5,98
+Gabriel Martinelli Silva,106.089554,MID,Arsenal,7.7,118
+Michael Olise,105.18929,MID,Crystal Palace,5.7,125
+Andreas Hoelgebaum Pereira,103.05451,MID,Fulham,5.4,127
+Alexis Mac Allister,102.98191,MID,Liverpool,5.9,109
+Dwight McNeil,101.81688,MID,Everton,5.4,124
+Lucas Tolentino Coelho de Lima,101.52611,MID,West Ham,6.0,100
+Abdoulaye Doucouré,100.63777,MID,Everton,5.5,116
+Sean Longstaff,99.39383,MID,Newcastle,4.9,110
+Anthony Elanga,99.324524,MID,Nott'm Forest,5.0,119
+Tomáš Souček,98.85034,MID,West Ham,4.9,116
+Pablo Sarabia,96.87846,MID,Wolves,4.7,99
+Gustavo Hamer,95.13798,MID,Sheffield Utd,5.0,108
+Jordan Ayew,94.70724,MID,Crystal Palace,5.4,109
+Justin Kluivert,94.45005,MID,Bournemouth,4.7,100
+Pape Matar Sarr,93.3398,MID,Spurs,4.5,86
+Richarlison de Andrade,93.32576,MID,Spurs,6.8,122
+Marcus Rashford,93.23759,MID,Man Utd,8.6,108
+Kevin De Bruyne,92.2896,MID,Man City,10.6,98
+Scott McTominay,91.84952,MID,Man Utd,4.7,98
+Harry Wilson,89.92048,MID,Fulham,5.3,94
+Jack Harrison,89.86081,MID,Everton,5.5,92
+Mykhailo Mudryk,89.34203,MID,Chelsea,6.3,94
+Dominik Szoboszlai,89.0957,MID,Liverpool,7.1,99
+Harvey Elliott,88.60557,MID,Liverpool,4.8,96
+Bobby De Cordova-Reid,87.24356,MID,Fulham,5.4,92
+Mario Lemina,87.18042,MID,Wolves,4.9,95
+Diogo Teixeira da Silva,86.571915,MID,Liverpool,7.9,110
+Ross Barkley,86.224915,MID,Luton,4.9,101
+Willian Borges da Silva,84.794174,MID,Fulham,5.3,94
+Miguel Almirón Rejala,84.612434,MID,Newcastle,6.2,77
+Alex Iwobi,84.419586,MID,Fulham,5.3,99
+Marcus Tavernier,84.321976,MID,Bournemouth,5.4,89
+Mathias Jensen,84.13093,MID,Brentford,5.4,98
+Vitaly Janelt,84.093575,MID,Brentford,5.3,93
+Simon Adingra,83.82281,MID,Brighton,5.0,97
+Pedro Lomba Neto,83.544495,MID,Wolves,5.6,86
+Kobbie Mainoo,83.370804,MID,Man Utd,4.4,77
+Enzo Fernández,82.974846,MID,Chelsea,4.9,77
+João Palhinha Gonçalves,81.97138,MID,Fulham,5.0,91
+Noni Madueke,80.23138,MID,Chelsea,5.3,76
+Ryan Christie,78.90107,MID,Bournemouth,5.0,90
+Callum Hudson-Odoi,78.45879,MID,Nott'm Forest,4.7,109
+Moisés Caicedo Corozo,78.43464,MID,Chelsea,4.6,84
+James Garner,77.617584,MID,Everton,4.9,87
+Jacob Murphy,77.28309,MID,Newcastle,4.8,82
+Christian Nørgaard,76.30971,MID,Brentford,5.4,74
+Kaoru Mitoma,76.2333,MID,Brighton,6.5,74
+Youri Tielemans,75.68985,MID,Aston Villa,5.7,77
+Lewis Cook,73.99484,MID,Bournemouth,5.0,77
+Josh Brownhill,73.86118,MID,Burnley,4.7,78
+Jacob Bruun Larsen,71.89449,MID,Burnley,4.9,82
+Wilson Odobert,70.82334,MID,Burnley,5.0,82
+Carlos Henrique Casimiro,69.4708,MID,Man Utd,5.3,58
+Mateo Kovačić,68.66281,MID,Man City,4.7,59
+Tahith Chong,67.884796,MID,Luton,4.7,78
+Tom Cairney,67.42318,MID,Fulham,4.9,70
+Idrissa Gueye,67.14938,MID,Everton,4.8,73
+Billy Gilmour,66.674805,MID,Brighton,4.9,61
+Nicolás Domínguez,66.643524,MID,Nott'm Forest,5.0,67
+João Victor Gomes da Silva,66.12837,MID,Wolves,4.9,75
+Jefferson Lerma Solís,65.30446,MID,Crystal Palace,4.7,64
+Josh Cullen,63.95285,MID,Burnley,5.0,65
+Keane Lewis-Potter,62.817318,MID,Brentford,4.7,73
+Jeffrey Schlupp,62.36792,MID,Crystal Palace,4.9,66
+Danilo dos Santos de Oliveira,62.0664,MID,Nott'm Forest,5.3,65
+James McAtee,62.041565,MID,Sheffield Utd,4.4,76
+Sander Berge,61.81642,MID,Burnley,4.7,74
+Amadou Onana,61.684856,MID,Everton,4.8,66
+Philip Billing,60.58611,MID,Bournemouth,5.2,60
+Dango Ouattara,60.359875,MID,Bournemouth,4.7,56
+Ben Brereton,59.463707,MID,Sheffield Utd,5.0,62
+Will Hughes,57.75914,MID,Crystal Palace,4.9,61
+Harvey Barnes,57.31806,MID,Newcastle,6.3,64
+Vini de Souza Costa,55.93433,MID,Sheffield Utd,5.0,73
+Adam Wharton,53.679455,MID,Crystal Palace,5.0,50
+Yves Bissouma,52.619152,MID,Spurs,5.0,44
+Edson Álvarez Velázquez,51.821198,MID,West Ham,5.0,62
+Christian Eriksen,51.06209,MID,Man Utd,5.9,48
+Joelinton Cássio Apolinário de Lira,50.623554,MID,Newcastle,5.8,45
+Facundo Buonanotte,50.564327,MID,Brighton,4.7,57
+Andros Townsend,49.514835,MID,Luton,5.0,61
+Ryan Yates,48.123375,MID,Nott'm Forest,4.8,59
+Ryan Gravenberch,46.74959,MID,Liverpool,5.0,45
+Boubacar Kamara,45.02954,MID,Aston Villa,5.0,40
+Jack Grealish,44.187958,MID,Man City,7.2,50
+Antony Matheus dos Santos,43.867374,MID,Man Utd,6.8,47
+Elliot Anderson,43.864643,MID,Newcastle,4.3,42
+Luis Sinisterra,42.99194,MID,Bournemouth,5.5,43
+Wataru Endo,42.675293,MID,Liverpool,5.4,47
+Lewis Miley,42.58474,MID,Newcastle,4.5,44
+Curtis Jones,42.53237,MID,Liverpool,4.9,40
+Jorge Luiz Frello Filho,42.494617,MID,Arsenal,5.3,44
+Harrison Reed,41.5191,MID,Fulham,4.6,47
+Albert Sambi Lokonga,41.109173,MID,Luton,4.9,47
+Giovani Lo Celso,39.745255,MID,Spurs,4.8,47
+Alex Scott,39.228336,MID,Bournemouth,4.9,41
+Jóhann Berg Gudmundsson,38.748272,MID,Burnley,4.8,48
+Saša Lukić,38.248707,MID,Fulham,4.4,43
+Mikkel Damsgaard,38.077267,MID,Brentford,4.8,45
+Jack Hinshelwood,38.02753,MID,Brighton,4.5,42
+Solly March,36.692375,MID,Brighton,6.5,39
+Orel Mangala,36.55772,MID,Nott'm Forest,5.0,40
+Pierre-Emile Højbjerg,36.53645,MID,Spurs,5.2,39
+Jean-Ricner Bellegarde,35.88641,MID,Wolves,4.9,45
+Jordan Clark,34.077797,MID,Luton,4.8,44
+Rodrigo Bentancur,33.86187,MID,Spurs,5.4,32
+Morgan Rogers,33.78616,MID,Aston Villa,5.0,35
+Oliver Norwood,32.98605,MID,Sheffield Utd,4.8,42
+Luca Koleosho,32.84127,MID,Burnley,5.0,40
+Anssumane Fati Vieira,32.798363,MID,Brighton,6.4,33
+Tommy Doyle,32.46385,MID,Wolves,4.4,38
+Frank Onyeka,32.245678,MID,Brentford,4.9,39
+Kevin Schade,31.26942,MID,Brentford,5.3,33
+Matheus Luiz Nunes,30.70014,MID,Man City,4.8,31
+James Milner,30.477993,MID,Brighton,4.9,28
+Adama Traoré,30.35123,MID,Fulham,4.9,36
+Carlos Baleba,29.548862,MID,Brighton,4.5,34
+Thomas Partey,29.496353,MID,Arsenal,4.8,24
+Ben Osborn,26.851784,MID,Sheffield Utd,4.8,38
+Nicolò Zaniolo,26.19704,MID,Aston Villa,5.4,34
+Emile Smith Rowe,26.089243,MID,Arsenal,5.3,25
+Arnaut Danjuma Groeneveld,25.342613,MID,Everton,5.4,26
+Jacob Ramsey,25.098743,MID,Aston Villa,5.9,29
+Adam Lallana,24.919203,MID,Brighton,4.9,30
+Saïd Benrahma,24.442663,MID,West Ham,5.8,20
+Yegor Yarmoliuk,24.35949,MID,Brentford,4.3,30
+Cheick Doucouré,24.105663,MID,Crystal Palace,5.0,21
+Amad Diallo,22.783314,MID,Man Utd,4.4,23
+Ibrahim Sangaré,22.758322,MID,Nott'm Forest,5.0,25
+Mason Mount,22.064577,MID,Man Utd,6.8,23
+Luke Berry,21.526527,MID,Luton,4.6,31
+Julio Enciso,20.526018,MID,Brighton,5.1,20
+Sofyan Amrabat,20.356731,MID,Man Utd,5.0,26
+Pelly Ruddock Mpanzu,19.930923,MID,Luton,4.8,35
+Sandro Tonali,19.180553,MID,Newcastle,5.5,16
+Saman Ghoddos,18.681196,MID,Brentford,4.5,26
+Joe Willock,18.465408,MID,Newcastle,5.3,18
+André Tavares Gomes,18.350174,MID,Everton,4.4,20
+Oliver Arblaster,18.163872,MID,Sheffield Utd,4.5,19
+Marvelous Nakamba,18.139168,MID,Luton,4.4,21
+Oliver Skipp,16.405245,MID,Spurs,4.6,22
+Andre Brooks,16.302954,MID,Sheffield Utd,4.4,26
+Jakub Moder,15.775192,MID,Brighton,4.4,21
+Boubacar Traoré,15.588909,MID,Wolves,4.3,25
+Mahmoud Dahoud,15.1453705,MID,Brighton,4.9,14
+Pablo Fornals Malla,15.101508,MID,West Ham,4.8,19
+Mike Trésor,13.387427,MID,Burnley,5.4,20
+Joe Rothwell,11.670448,MID,Bournemouth,4.9,13
+Aaron Ramsey,11.217034,MID,Burnley,5.0,18
+Naouirou Ahamada,10.334651,MID,Crystal Palace,4.3,16
+Anis Slimane,9.99157,MID,Sheffield Utd,4.7,14
+Fred Onyedinma,9.469705,MID,Luton,5.0,11
+Kalvin Phillips,9.257583,MID,West Ham,4.7,6
