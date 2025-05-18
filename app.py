@@ -9,7 +9,7 @@ import requests
 def load_player_data():
     dfs = {}
     for pos in ["GK", "DEF", "MID", "FWD"]:
-        dfs[pos] = pd.read_csv(f"output/{pos}_players.csv")
+        dfs[pos] = pd.read_csv(f"output/{pos}_players_Mdl_2024_25.csv")
     return dfs
 
 @st.cache_resource
@@ -228,7 +228,6 @@ else:
         use_container_width=True
     )
     st.markdown("*Data via FPL public API — refreshes every 5 minutes.*")
-
 
 
 

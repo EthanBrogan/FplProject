@@ -17,3 +17,6 @@ Go to the code section and copy the url.
 'streamlit run app.py'
 'python -m streamlit run app.py'
 
+## models
+data for 24/25 season trained on 2023/24
+data for 23/24 season trained on 2022/23

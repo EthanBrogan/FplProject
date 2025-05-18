@@ -116,16 +116,18 @@ df_sorted = grouped[['name', 'Predicted Points', 'position', 'team', 'value', 't
 output_dir = "output"
 os.makedirs(output_dir, exist_ok=True)
 
-# Position-specific outputs
+# Position-specific outputs with suffix _Mdl_2024_25
 positions = ['GK', 'DEF', 'MID', 'FWD']
 for position in positions:
     position_players = df_sorted[df_sorted['position'] == position].drop_duplicates(subset='name')
-    position_players.to_csv(os.path.join(output_dir, f"{position}_players.csv"), index=False)
+    filename = f"{position}_players_Mdl_2024_25.csv"
+    position_players.to_csv(os.path.join(output_dir, filename), index=False)
+    
     print(f"\nRecommended {position}s:")
     print(tabulate(position_players[['name', 'position', 'team', 'Predicted Points', 'value']], headers='keys', tablefmt='grid', showindex=False))
     print("\n" + "-"*50)
 
-# Final team
+# Final team with filename Team_mdl_2024_25.csv
 top_players = {
     'GK': df_sorted[df_sorted['position'] == 'GK'].head(2),
     'DEF': df_sorted[df_sorted['position'] == 'DEF'].head(5),
@@ -137,4 +139,5 @@ final_team = pd.concat(top_players.values()).drop_duplicates(subset='name')
 print("\nFinal Recommended FPL Team:")
 print(tabulate(final_team[['name', 'position', 'team', 'Predicted Points', 'value']], headers='keys', tablefmt='grid', showindex=False))
 
-final_team.to_csv(os.path.join(output_dir, "final_recommended_fpl_team.csv"), index=False)
+final_team.to_csv(os.path.join(output_dir, "Team_mdl_2024_25.csv"), index=False)
+
