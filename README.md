@@ -11,11 +11,12 @@ Go to the code section and copy the url.
 'pip install -r requirements.txt'
 
 ### To run the model
-'python fpl_model.py'
+'python fpl_model_2425.py'
+'python fpl_model_2324.py'
 
 ### To run app
 'streamlit run app.py'
-'python -m streamlit run app.py'
+'python -m streamlit run UI.py'
 
 ## models
 data for 24/25 season trained on 2023/24

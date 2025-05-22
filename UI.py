@@ -22,7 +22,7 @@ scaler = load_scaler_and_model()
 
 # --- Sidebar: Page selector ---
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ["Recommendations", "News & Stats", "Transfers & Prices"])
+page = st.sidebar.radio("Go to", ["Recommendations", "News & Stats", "Transfers & Prices", "Comparison"])
 
 # --- Page: Recommendations ---
 if page == "Recommendations":
@@ -45,13 +45,20 @@ if page == "Recommendations":
         position_limits = {"GK": 2, "DEF": 5, "MID": 5, "FWD": 3}
         current = {}
 
-        # 1) Select current squad
+        # 1) Select current squad with names + prices in dropdown
         for pos in position_limits:
-            current[pos] = st.multiselect(
+            df_pos = player_data[pos]
+            options_with_price = [f"{row['name']} (£{row['value']:.1f}m)" for _, row in df_pos.iterrows()]
+            # Map displayed name to actual player name for internal use
+            name_map = {f"{row['name']} (£{row['value']:.1f}m)": row['name'] for _, row in df_pos.iterrows()}
+
+            selected = st.multiselect(
                 f"Select your current {pos}s",
-                options=player_data[pos]["name"],
+                options=options_with_price,
                 default=[]
             )
+            # Convert back to player names only
+            current[pos] = [name_map[name] for name in selected]
 
         # 2) Validate
         invalid = False
@@ -130,10 +137,13 @@ if page == "Recommendations":
                 })
 
         summary_df = pd.DataFrame(summary_records)
-        st.dataframe(
-            summary_df.sort_values(["Type","Position"]).reset_index(drop=True),
-            use_container_width=True
-        )
+
+        # Sort with custom order for positions so it appears in GK, DEF, MID, FWD order
+        position_order = {"GK": 0, "DEF": 1, "MID": 2, "FWD": 3}
+        summary_df["PositionOrder"] = summary_df["Position"].map(position_order)
+        summary_df = summary_df.sort_values(["Type", "PositionOrder"]).drop(columns=["PositionOrder"]).reset_index(drop=True)
+
+        st.dataframe(summary_df, use_container_width=True)
 
 # --- Page: News & Stats ---
 elif page == "News & Stats":
@@ -181,7 +191,7 @@ elif page == "News & Stats":
     st.markdown("*Data from the FPL public API — updates every game-week.*")
 
 # --- Page: Transfers & Prices ---
-else:
+elif page == "Transfers & Prices":
     st.title("Net Transfers & Price Changes")
 
     st.markdown("""
@@ -228,6 +238,32 @@ else:
         use_container_width=True
     )
     st.markdown("*Data via FPL public API — refreshes every 5 minutes.*")
+
+# --- New Page: Comparison ---
+else:
+    st.title("Comparison: Predicted vs Actual Best Squads")
+
+    # Load all four CSVs (you may adjust paths as needed)
+    fpl_best_2324 = pd.read_csv("output/fpl_best_2324.csv")
+    fpl_best_2425 = pd.read_csv("output/fpl_best_2425.csv")
+    team_mdl_2324 = pd.read_csv("output/Team_mdl_2023_24.csv")
+    team_mdl_2425 = pd.read_csv("output/Team_mdl_2024_25.csv")
+
+    st.markdown("### Actual Best Squad 2023/24 Season")
+    st.dataframe(fpl_best_2324.style.format({"total_points": "{:.0f}"}), use_container_width=True)
+
+    st.markdown("### Predicted Best Squad for 2023/24 Season (Model trained on 22/23)")
+    st.dataframe(team_mdl_2324.style.format({"Predicted Points": "{:.1f}", "value": "£{:.1f}"}), use_container_width=True)
+
+    st.markdown("### Actual Best Squad 2024/25 Season")
+    st.dataframe(fpl_best_2425.style.format({"total_points": "{:.0f}"}), use_container_width=True)
+
+    st.markdown("### Predicted Best Squad for 2024/25 Season (Model trained on 23/24)")
+    st.dataframe(team_mdl_2425.style.format({"Predicted Points": "{:.1f}", "value": "£{:.1f}"}), use_container_width=True)
+
+
+
+
 
 
 

@@ -9,6 +9,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 import joblib
 from tabulate import tabulate
+import requests
+
 
 # Reproducibility
 SEED = 42
@@ -141,3 +143,48 @@ print(tabulate(final_team[['name', 'position', 'team', 'Predicted Points', 'valu
 
 final_team.to_csv(os.path.join(output_dir, "Team_mdl_2024_25.csv"), index=False)
 
+def get_fpl_squad():
+    url = 'https://fantasy.premierleague.com/api/bootstrap-static/'
+    response = requests.get(url)
+    data = response.json()
+
+    # Load players and positions
+    players = pd.DataFrame(data['elements'])
+    positions = pd.DataFrame(data['element_types'])
+
+    # Merge to get position names
+    players = players.merge(positions[['id', 'singular_name']], left_on='element_type', right_on='id')
+    players.rename(columns={'singular_name': 'position'}, inplace=True)
+
+    # Define squad composition (as per usual FPL rules)
+    squad_composition = {
+        'Goalkeeper': 2,
+        'Defender': 5,
+        'Midfielder': 5,
+        'Forward': 3
+    }
+
+    squad = []
+    for position, count in squad_composition.items():
+        top_players = players[players['position'] == position].nlargest(count, 'total_points')
+        squad.append(top_players)
+
+    optimal_squad = pd.concat(squad)
+
+    # Select relevant columns & rename for clarity
+    optimal_squad = optimal_squad[['first_name', 'second_name', 'position', 'total_points', 'now_cost']]
+    optimal_squad.rename(columns={'first_name': 'First Name', 'second_name': 'Second Name', 'total_points': 'Total Points', 'now_cost': 'Value (0.1m)'}, inplace=True)
+
+    # Format value properly (divide by 10 to get millions)
+    optimal_squad['Value (0.1m)'] = optimal_squad['Value (0.1m)'] / 10
+
+    return optimal_squad
+
+# Fetch and save the optimal squad for the current 2024/25 season (live from API)
+squad_2024_25 = get_fpl_squad()
+
+print("\nOptimal FPL Squad for the 2024/25 Season (live data):")
+print(tabulate(squad_2024_25, headers='keys', tablefmt='grid', showindex=False))
+
+# Save to CSV
+squad_2024_25.to_csv(os.path.join(output_dir, "fpl_best_2425.csv"), index=False)
