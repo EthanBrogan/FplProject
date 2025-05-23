@@ -15,7 +15,6 @@ Go to the code section and copy the url.
 'python fpl_model_2324.py'
 
 ### To run app
-'streamlit run app.py'
 'python -m streamlit run UI.py'
 
 ## models
