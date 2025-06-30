@@ -243,7 +243,7 @@ elif page == "Transfers & Prices":
 else:
     st.title("Comparison: Predicted vs Actual Best Squads")
 
-    # Load all four CSVs (you may adjust paths as needed)
+    # Load all four CSVs 
     fpl_best_2324 = pd.read_csv("output/fpl_best_2324.csv")
     fpl_best_2425 = pd.read_csv("output/fpl_best_2425.csv")
     team_mdl_2324 = pd.read_csv("output/Team_mdl_2023_24.csv")
